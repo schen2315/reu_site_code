@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="joml-android-1.9.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.joml/joml-android/1.9.1-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.joml/joml-android/1.9.1-SNAPSHOT/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joml/joml-android/1.9.1-SNAPSHOT/2b94d6c192b97b0b2918d38383aaf191e71f34b6/joml-android-1.9.1-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
