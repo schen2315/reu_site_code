@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="backend_daydream-3.2.1-SNAPSHOT">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.gearvrf/backend_daydream/3.2.1-SNAPSHOT/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.gearvrf/backend_daydream/3.2.1-SNAPSHOT/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.gearvrf/backend_daydream/3.2.1-SNAPSHOT/1d6e9baacc6bcb9ddfc641df28ba6e83ac9bca17/backend_daydream-3.2.1-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
