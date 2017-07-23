@@ -53,8 +53,47 @@ main (int argc, char *argv[])
   gst_rtsp_media_factory_set_launch (factory,
       "( v4l2src is-live=1 device=/dev/video1 ! video/x-raw,framerate=30/1,width=2560,height=720 ! omxvp8enc ! rtpvp8pay name=pay0 pt=96 )");
 */
+/*
   gst_rtsp_media_factory_set_launch (factory,
       "( v4l2src is-live=1 device=/dev/video1 ! video/x-raw,framerate=30/1,width=2560,height=720 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+*/
+/*
+  gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src is-live=1 device=/dev/video1 ! video/x-raw,framerate=30/1,width=1344,height=376 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+
+*/
+
+
+//doesn't work
+/*
+  gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue ! nvvidconv ! 'video/x-raw(memory:NVMM), width=3840, height=1080, format=I420' !  omxh264enc bitrate=40000000 ! h264parse ! qtmux ! filesink location=stream_while_recording5.mp4 sync=false t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 -e -vvv )");
+*/
+/*
+  gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue ! omxh264enc ! rtph264pay name=pay0 pt=96 t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay1 pt=96 -e -vvv )");
+*/
+/*
+  gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue ! omxh264enc ! rtph264pay name=pay0 pt=96 t. ! nvvidconv ! 'video/x-raw(memory:NVMM), width=3840, height=1080, format=I420' !  omxh264enc bitrate=40000000 ! h264parse ! qtmux ! filesink location=stream_while_recording6.mp4 sync=false -e -vvv )");
+*/
+/*
+  gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! omxh264enc ! rtph264pay name=pay0 pt=96  -e -vvv )");
+*/
+/*
+//actually works
+gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue ! xvimagesink t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+*/
+
+gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue !  videorate ! video/x-raw,framerate=30/1,width=3840,height=1080 ! jpegenc ! avimux  ! filesink location=tx2_zed_sample2.mp4 t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+
+/*
+gst_rtsp_media_factory_set_launch (factory,
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+*/
   gst_rtsp_media_factory_set_shared (factory, TRUE);
 
   /* attach the test factory to the /test url */
