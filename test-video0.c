@@ -85,16 +85,14 @@ main (int argc, char *argv[])
 gst_rtsp_media_factory_set_launch (factory,
       "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! tee name=t ! queue ! xvimagesink t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
 */
-/*
-gst_rtsp_media_factory_set_launch (factory,
-      "( v4l2src device=/dev/video1 ! tee name=t ! queue !  videorate ! video/x-raw,framerate=30/1,width=3840,height=1080 ! jpegenc ! avimux  ! filesink location=zed_s1.mp4 t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! jpegenc ! rtpjpegpay name=pay0 pt=96 -vvv)");
-*/
 
 gst_rtsp_media_factory_set_launch (factory,
-      "( v4l2src device=/dev/video1 ! tee name=t ! queue !  videorate ! video/x-raw,framerate=30/1,width=3840,height=1080 ! jpegenc ! avimux  ! filesink location=zed_s1.mp4 t. ! queue ! videoscale ! video/x-raw,width=1280,height=360 ! jpegenc ! rtpjpegpay name=pay0 pt=96 -vvv)");
+      "( v4l2src device=/dev/video0 ! tee name=t ! queue !  videorate ! jpegenc ! avimux  ! filesink location=video0_s3.mp4 t. ! queue  ! jpegenc ! rtpjpegpay name=pay0 pt=96 -vvv)");
+
+
 /*
 gst_rtsp_media_factory_set_launch (factory,
-      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph264pay name=pay0 pt=96 )");
+      "( v4l2src device=/dev/video1 ! video/x-raw,framerate=30/1,width=3840,height=1080 ! videoscale ! video/x-raw,width=1280,height=360 ! omxh264enc ! rtph24pay name=pay0 pt=96 )");
 */
   gst_rtsp_media_factory_set_shared (factory, TRUE);
 
