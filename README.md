@@ -1,5 +1,5 @@
 
-* Installation Instructions
+## Installation Instructions
 First make sure gstreamer is installed in your Linux Ubuntu distro. Then do:
 
 `sudo apt-get install gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-dev libgstreamer-plugins-base1.0-0 gstreamer1.0-libav gstreamer1.0-libav-dbg`
