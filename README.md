@@ -10,11 +10,9 @@ install both the regular and dbg plugins. Then do:
 
 `apt-cache search gst | grep "rtsp"`
 
-if you see libgstrtspserver-1.0-0 (NOT version 0.1) then go ahead and install
-otherwise do:
-go to here: https://gstreamer.freedesktop.org/src/gst-rtsp-server/
-download gst-rtsp-server-1.2.3.tar.xz
-extract, go to the directory and do:
+if you see libgstrtspserver-1.0-0 (NOT version 0.1) then go ahead and install, 
+otherwise go to here: https://gstreamer.freedesktop.org/src/gst-rtsp-server/.
+download gst-rtsp-server-1.2.3.tar.xz and extract, go to the directory and do:
 `sudo ./configure && make && make install`
 
 Now go back to reu_site_code directory and try:  

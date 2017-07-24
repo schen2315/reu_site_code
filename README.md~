@@ -10,9 +10,8 @@ install both the regular and dbg plugins. Then do:
 
 `apt-cache search gst | grep "rtsp"`
 
-if you see libgstrtspserver-1.0-0 (NOT version 0.1) then go ahead and install
-otherwise do:
-go to here: https://gstreamer.freedesktop.org/src/gst-rtsp-server/
+if you see libgstrtspserver-1.0-0 (NOT version 0.1) then go ahead and install, 
+otherwise go to here: https://gstreamer.freedesktop.org/src/gst-rtsp-server/
 download gst-rtsp-server-1.2.3.tar.xz
 extract, go to the directory and do:
 `sudo ./configure && make && make install`
@@ -59,5 +58,5 @@ Now replace 127.0.0.1 w/ this address for the new instruction:
   
   
   
-Check out the REU Site Umass Lowell Research Gists from here for details on how to build, run, and understand these projects.
+Check out the REU Site Umass Lowell Research [Gists](https://gist.github.com/schen2315/d05027bae32fe160f306b59663ad2dae) from here for details on how to build, run, and understand these projects.
 
